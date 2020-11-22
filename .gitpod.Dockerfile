@@ -7,8 +7,10 @@ FROM debian:10.6
 # More information: https://www.gitpod.io/docs/config-docker/
 
 USER root
-RUN apt-get update \
+RUN true \
+ && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+ && apt-get update \
  && apt-get install -y \
+    nodejs \
     python3.7 \
-    python3-venv \
-    npm
+    python3-venv
